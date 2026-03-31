@@ -35,7 +35,7 @@ Let's set up a prod deployment workflow that will run every time your build work
 
     This workflow will trigger every time the `Build and Deploy` workflow run completes.
 
-    Configure `actions: read` permissions so this workflow can download artifacts from other workflows.
+    The `actions: read` permission is included so this workflow can download artifacts from other workflows.
 
 1. Now let's add a job that will download the artifact produced by the `Build and Deploy` workflow.
 
@@ -93,13 +93,13 @@ Nice work! If you want an extra challenge, this bonus activity adds an approval 
 
 1. Go to your repository **[settings](https://github.com/{{full_repo_name}}/settings)**.
 1. In the left sidebar, select **[Environments](https://github.com/{{full_repo_name}}/settings/environments)** tab.
-1. Click the **Prod** environment to edit it. Add yourself (`{{ login }}`) as a required reviewer and save the changes.
+1. Click the **prod** environment to edit it. Add yourself (`{{ login }}`) as a required reviewer and save the changes.
 
     <img width="900" alt="Prod environment settings showing required reviewers" src="../images/required-reviewers.png" />
 
    This will cause any job that targets `environment: prod` to pause and wait for your review before proceeding.
 
-1. Go to the **[Actions](https://github.com/{{full_repo_name}}/actions/workflows/build-deploy.yml)** tab and manually trigger the `Build and Deploy` workflow.
+1. Go to the **[Actions](https://github.com/{{full_repo_name}}/actions/workflows/build-deploy.yml)** tab and use the `Run workflow` dropdown to manually trigger the `Build and Deploy` workflow.
 
    <img width="900" alt="Manually trigger the Build and Deploy workflow from the Actions tab" src="../images/trigger-build-deploy.png" />
 
